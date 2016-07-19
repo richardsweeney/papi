@@ -78,8 +78,9 @@ class Papi_Property_Dropdown extends Papi_Property {
 			}
 
 			$options_html[] = papi_html_tag( 'option', [
-				'selected' => $value === $settings->selected ? 'selected' : null,
-				'value'    => $value,
+				'data-edit-url' => get_edit_post_link( $value ),
+				'selected'      => $value === $settings->selected ? 'selected' : null,
+				'value'         => $value,
 				papi_convert_to_string( $key )
 			] );
 		}
